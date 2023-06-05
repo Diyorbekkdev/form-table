@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/login-page.min.css">
+</head>
+<body>
+    
+    <div class="modal">
+        <div class="modal_box">
+            <button class="close" onclick="openModal()" >x</button>
+            <div class="wrapper">
+                <img src="assets/images/task.jpg" alt="../">
+                <p>Suratda nima mantiqga to'g'ri kelmaydi? <br>
+                    Aynan o'sha narsa login parol hisoblanadi. Good luck😉!
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <header class="main-header hide-content">
+      </header>
+      <main class="hide-content">
+        <div class="container">
+          <h1 class="main-heading">Sign In to move next page</h1>
+          <div class="slim-container">
+            <form  id="loginForm" class="line-form">
+              <label for="sign-in-email" class="offscreen">Email</label>
+              <input type="text" id="sign-in-email" class="input input-email" placeholder="Email" required>
+              <label for="sign-in-password" class="offscreen">Password</label>
+              <input id="sign-in-email" type="password" class="input input-password  password" placeholder="Password">
+              <button type="submit" class="submit">Submit</button>
+            </form>
+            <div class="slim-container-bottom">
+              <a href="#/" onclick="openModal()" class="button button-small">Find Password</a>
+              <a href="#/" class="button see button-small">See Password Hint</a>
+            </div>
+          </div>
+        </div> 
+      </main>
+      <div class="scene-position">
+        <ul id="scene">
+          <li class="layer" data-depth="0.1">
+            <img src="https://s25.postimg.cc/56y7u2q73/mountain-edit.png" alt="" class="bg-img bg-img-0">
+          </li>
+          <li class="layer" data-depth="0.2">
+            <img src="https://s25.postimg.cc/s709sbbe7/landscape.png" alt="" class="bg-img bg-img-1">
+          </li>
+          <li class="layer" data-depth="0.6">
+            <img src="https://s25.postimg.cc/hqor3pem7/big-clouds.png" alt="" class="bg-img bg-img-2">
+          </li>
+          <li class="layer" data-depth=".8">
+            <img src="https://s25.postimg.cc/hqor3pem7/big-clouds.png" alt="" class="bg-img bg-img-3">
+          </li>
+        </ul>
+      </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+      <script src="js/login-page.js"></script>
+</body>
+</html>

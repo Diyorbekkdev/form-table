@@ -1,0 +1,293 @@
+@import "https://unpkg.com/open-props/open-props.min.css";
+@import "https://unpkg.com/open-props/normalize.min.css";
+:root {
+  --bg: url("../assets/images/bg-dark.png");
+  --white: #fff;
+  --black: #000;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh !important;
+  font-family: "Google Sans", sans-serif, system-ui;
+  transition: background 0.25s;
+}
+body .bg-light {
+  position: absolute;
+  display: none;
+}
+body .fs-5 {
+  color: rgb(37, 38, 36);
+}
+
+#voice-search {
+  position: absolute;
+  top: 1px;
+  font-size: 25px;
+  right: 450px;
+  cursor: pointer;
+}
+
+.main_title {
+  text-align: center !important;
+  margin: 0 auto;
+  font-family: cursive !important;
+  color: #645e5e;
+}
+
+#search {
+  border-radius: 10px;
+}
+
+.btn {
+  border-radius: 5px !important;
+}
+
+.radial {
+  position: fixed;
+  --border-width: 12px;
+  --diameter: clamp(200px, 30vmin, 28rem);
+  --handle-size: 48px;
+  width: var(--diameter);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  right: 120px;
+  bottom: 20px;
+  z-index: 10;
+}
+
+.radial__ring {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.radial__handle {
+  width: var(--handle-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% - var(--border-width) * 0.5);
+  transform: translate(-50%, 50%);
+  box-shadow: var(--shadow-6);
+  padding: 0;
+  border: 2px solid hsl(0, 0%, 85%);
+  background: var(--gray-0);
+  display: grid;
+  place-items: center;
+}
+
+.radial__handle svg {
+  width: 70%;
+  aspect-ratio: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: background 0.25s;
+}
+
+.radial__handle [title=sun] {
+  fill: var(--yellow-4);
+}
+
+.radial__handle [title=moon] {
+  width: 45%;
+  fill: var(--gray-4);
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.radial__track {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: conic-gradient(from 270deg, var(--yellow-4) calc(var(--sun-stop, 0) * 1%), transparent calc(var(--sun-stop, 0) * 1%)), conic-gradient(from 90deg, var(--gray-7) calc(var(--moon-stop, 0) * 1%), transparent calc(var(--moon-stop, 0) * 1%)), var(--surface-2);
+  border-radius: 50%;
+  --stop: calc(var(--diameter) * 0.5 - var(--border-width));
+  -webkit-mask: radial-gradient(transparent var(--stop), black var(--stop));
+          mask: radial-gradient(transparent var(--stop), black var(--stop));
+}
+
+.radial__indicators {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.radial__indicator {
+  width: 48px;
+  aspect-ratio: 1;
+  position: absolute;
+  background: var(--gray-0);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--gray-4);
+}
+
+.radial__indicator:first-of-type {
+  --fill: var(--yellow-4);
+  top: 50%;
+  right: 100%;
+  transform: translate(calc(50% + var(--border-width) * 0.5), -50%);
+}
+
+.radial__indicator:last-of-type {
+  --fill: var(--gray-4);
+  top: 50%;
+  left: 100%;
+  transform: translate(calc(-50% - var(--border-width) * 0.5), -50%);
+}
+
+.radial__indicator svg {
+  fill: var(--fill);
+  width: 55%;
+}
+
+.radial__time {
+  transition: color 0.25s;
+  font-variant: tabular-nums;
+}
+
+.radial__track circle {
+  stroke-width: 12px;
+  stroke: red;
+}
+
+body.dark {
+  background-size: cover;
+  background-position: center;
+}
+body.dark .modal input {
+  background: transparent;
+  color: #188ff0;
+}
+body.dark .modal select {
+  background: transparent;
+  color: #188ff0;
+}
+body.dark .modal select option {
+  background: transparent;
+}
+body.dark .fs-5 {
+  color: #fff;
+}
+body.dark .modal-content {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.6px);
+  -webkit-backdrop-filter: blur(9.6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+body.dark .modal-content label {
+  color: #fff;
+}
+body.dark #voice-search {
+  color: #fff;
+}
+body.dark .bg-light {
+  display: block;
+}
+body.dark #search {
+  background: transparent;
+  border-radius: 10px;
+}
+body.dark thead th {
+  color: rgb(244, 244, 244);
+}
+body.dark #pupilTable tr {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.7px);
+  -webkit-backdrop-filter: blur(10.7px);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+body.dark #pupilTable th:first-child {
+  border-radius: 10px 0px 0px 10px;
+}
+body.dark #pupilTable td:last-child {
+  border-radius: 0px 10px 10px 0px;
+}
+body.dark #pupilTable th {
+  color: orange;
+}
+body.dark #pupilTable td {
+  color: #fff;
+}
+
+@media (max-width: 770px) {
+  .table {
+    overflow: scroll auto;
+  }
+}
+@media screen and (max-width: 770px) and (max-width: 770px) {
+  #voice-search {
+    display: none;
+  }
+  .input-group {
+    gap: 10px;
+  }
+  .radial {
+    left: 30px;
+    --border-width: 9px;
+    --diameter: clamp(150px, 25vmin, 24rem);
+    --handle-size: 35px;
+    width: var(--diameter);
+  }
+  table {
+    border: 0;
+  }
+  table caption {
+    font-size: 1.3em;
+  }
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  table th {
+    color: red;
+  }
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 1.1rem;
+    text-align: right;
+  }
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
