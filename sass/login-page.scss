@@ -64,6 +64,8 @@ html {
     }
   }
 
+
+
   .submit{
     font-family: 'Poppins';
     padding: 10px;
@@ -297,7 +299,12 @@ html {
     transform: scale(1.1) translateX(20px) translateY(0);
   }
   
-  
+  @media (max-width: 550px){
+    .modal .modal_box{
+        width: 80%;
+    }
+ } 
+
   @media screen and (max-width:479px) {
     .bg-img-1 {
         right: -40%;
